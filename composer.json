@@ -1,0 +1,19 @@
+{
+    "name": "taskapp",
+    "require":{
+        "php": ">=7.0"
+    },
+    "authors": [
+        {
+            "name": "Maurício Bryan de Andrade Viana",
+            "email": "mauriciobryan1998@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\":"App/",
+            "MF\\":"vendor/MF/"
+        }
+    }
+
+}

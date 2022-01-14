@@ -1,0 +1,63 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5 menu">
+      <div class="container">
+        <a class="navbar-brand" href="/inicio">
+           <img src="/img/logo.png" width="150"  alt="Finans">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/inicio">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cadastroContas">Cadastro de Despesas</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/cadastroGanhos">Cadastro de Ganhos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/consultaContas">Consulta de Despesas</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/consultaGanhos">Consulta de Ganhos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/sair">Sair</a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 ">
+          <h1 class="display-3">Olá <b> <?= ucfirst($this->view->nome_usuario['nome']) ?></b>, </h1>
+          <img class="mx-auto d-block mt-4" src="/img/hifive_profile.jpg" alt="hi five!" width="420">
+          <h6>É muito bom ter você aqui desde <b><?= $this->view->nome_usuario['data']?> </b> </h6>
+          <hr>
+          <h5>Ganho Atual: <span class="text-success">R$ <?= $this->view->somaValorGanho['soma'] ?>,00 </span></h5>
+          <h5>Débito Atual: <span class="text-danger">R$ <?= $this->view->somaValor['soma'] ?>,00 </span></h5>
+
+
+        </div>
+
+        <div class="col-md-6">
+          <h3><b class="display-4"><?= ucfirst($this->view->nome_usuario['nome']) ?></b>, este é o seu balanço: </h3>
+          <div id="columnchart_material" class="mt-4"></div>
+
+          <hr>
+
+          <h3>Suas despesas <b>por categoria</b> foram:</h3>
+
+          <div id="chart_div"></div>
+        </div>
+      </div>
+    </div>
+
+        

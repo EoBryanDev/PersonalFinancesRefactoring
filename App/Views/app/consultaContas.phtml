@@ -1,0 +1,80 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="/img/logo.png" width="150"  alt="Finans">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="/inicio">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cadastroContas">Cadastro de Despesas</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/cadastroGanhos">Cadastro de Ganhos</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/consultaContas">Consulta de Despesas</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/consultaGanhos">Consulta de Ganhos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/sair">Sair</a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col">
+          <h1 class="display-4">Consulta de despesas</h1>
+        </div>
+      </div>
+
+    
+      <div class="row">
+        <div class="col">
+          <table class="table" >
+            <thead>
+            
+              <tr>
+                <th>Data</th>
+                <th>Tipo</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th></th>
+              </tr>
+            </thead>
+            <?php foreach($this->view->despesas as $id_despesa => $despesa) {   ?>
+              <tr>
+                <td><?= $despesa['data'] ?></td>
+                <td><?= $despesa['descricao_despesa'] ?></td>
+                <td><?= ucfirst($despesa['descricao']) ?></td>
+                <td><?= 'R$  '. $despesa['valor'] ?></td>
+                <td>
+                    <a href="/deletarDespesa?acao=remover&id_despesa=<?=$despesa['id_despesa']?>" class="btn btn-danger">X</a>
+                </td>
+              </tr>
+        <?php } ?>
+              
+             
+
+            <tbody id="listaDespesas">
+              
+            </tbody>
+          </table>
+
+          <h4 class="text-right">Total: R$ <?= $this->view->somaValor['soma'] ?> </h4>
+        </div> 
+      </div>
+    </div>

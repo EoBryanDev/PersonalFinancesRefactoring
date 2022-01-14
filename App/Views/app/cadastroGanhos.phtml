@@ -1,0 +1,105 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5 menu">
+      <div class="container">
+        <a class="navbar-brand" href="/inicio">
+           <img src="/img/logo.png" width="150"  alt="Finans">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/inicio">Início</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/cadastroContas">Cadastro de Despesas</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/cadastroGanhos">Cadastro de Ganhos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/consultaContas">Consulta de Despesas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/consultaGanhos">Consulta de Ganhos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/sair">Sair</a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    <form action="/cadastrarGanhos" method="post">
+    <div class="container">
+      <div class="row">
+        <div class="col mb-5">
+          <h1 class="display-4">Registro de novo ganho</h1>
+        </div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-2">
+          <select name="ano" class="form-control" id="ano" required>
+            <option value="">Ano</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2021">2022</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <select name="mes" class="form-control" id="mes" required>
+            <option value="">Mês</option>
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+            <option value="3">Março</option>
+            <option value="4">Abril</option>
+            <option value="5">Maio</option>
+            <option value="6">Junho</option>
+            <option value="7">Julho</option>
+            <option value="8">Agosto</option>
+            <option value="9">Setembro</option>
+            <option value="10">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+          </select>
+        </div>
+        
+        <div class="col-md-2">
+          <input type="text" name="dia" class="form-control" placeholder="Dia" id="dia" required/>
+        </div>
+
+        <div class="col-md-6">
+          <select name="naturezaGanho" class="form-control" id="tipo" required >
+            <option value="">Tipo</option>
+            <option value="1">Salário</option>
+            <option value="2">Renda Extra</option>
+            <option value="3">Transação</option>
+            <option value="4">Rendimentos</option>
+            <option value="5">Outros</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <input type="text" name="descricao" maxlength="70" class="form-control" placeholder="Descrição" id="descricao" />
+        </div>
+
+        <div class="col-md-2">
+          <input type="number" step="0.01" min="0.01" name="valor" class="form-control" placeholder="Valor" id="valor" required />
+        </div>
+      </form>
+  
+        <div class="col-md-2 d-flex justify-content-end">
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
